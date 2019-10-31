@@ -1,19 +1,26 @@
-import * as core from '@actions/core';
-import {wait} from './wait'
+import * as core from "@actions/core";
+import { context, GitHub } from "@actions/github";
+import { main } from "./functions";
 
-async function run() {
-  try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+const userId = core.getInput("userId");
+const token = process.env.GITHUB_TOKEN;
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms, 10));
-    core.debug((new Date()).toTimeString())
+const getReviews = (
+  token: string,
+  owner: string,
+  repo: string,
+  pullNumber: number,
+) =>
+  new GitHub(token).pulls.listReviews({
+    owner,
+    repo,
+    pull_number: pullNumber,
+  });
 
-    core.setOutput('time', new Date().toTimeString());
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-run();
+main(userId, token, context, getReviews)
+  .then(() => {
+    core.setOutput("time", new Date().toTimeString());
+  })
+  .catch(err => {
+    core.setFailed(err.message);
+  });

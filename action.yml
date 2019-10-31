@@ -1,10 +1,9 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "yamatatsu"
+description: "protect-branch-by-user"
+author: yamatatsu <the.kinnikuman@gmail.com>
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  userId:
+    description: "owner github userId"
 runs:
-  using: 'node12'
-  main: 'lib/main.js'
+  using: "node12"
+  main: "lib/main.js"
