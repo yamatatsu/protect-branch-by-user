@@ -5,7 +5,7 @@
   "description": "protect-branch-by-user",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc & ncc build lib/main.js",
     "test": "jest"
   },
   "repository": "yamatatsu/protect-branch-by-user",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.4",
+    "@zeit/ncc": "^0.20.5",
     "jest": "^24.8.0",
     "jest-circus": "^24.7.1",
     "prettier": "^1.18.2",
