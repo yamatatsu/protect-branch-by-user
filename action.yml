@@ -4,6 +4,7 @@ author: yamatatsu <the.kinnikuman@gmail.com>
 inputs:
   userId:
     description: "owner github userId"
+    required: true
 runs:
   using: "node12"
   main: "lib/main.js"
