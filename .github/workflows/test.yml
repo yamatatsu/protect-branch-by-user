@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-
-      - run: yarn
-      - run: yarn build
-      - run: yarn test
       - uses: ./
         with:
           userId: yamatatsu
