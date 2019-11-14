@@ -1,4 +1,4 @@
-name: "yamatatsu"
+name: protect-branch-by-user
 description: "protect-branch-by-user"
 author: yamatatsu <the.kinnikuman@gmail.com>
 inputs:
