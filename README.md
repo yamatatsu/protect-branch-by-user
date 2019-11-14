@@ -16,7 +16,7 @@ nothing
 ## Example usage
 
 ```yaml
-uses: actions/protect-branch-by-user@1.0.3
+uses: yamatatsu/protect-branch-by-user@1.0.4
 with:
   userId: yamatatsu
 env:
