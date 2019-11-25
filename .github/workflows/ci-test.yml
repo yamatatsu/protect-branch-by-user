@@ -1,5 +1,5 @@
 name: "Test protect-branch-by-user"
-on: pull_request
+on: push
 
 jobs:
   test:
