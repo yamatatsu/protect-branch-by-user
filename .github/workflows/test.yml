@@ -1,5 +1,5 @@
 name: "Test protect-branch-by-user"
-on: pull_request
+on: pull_request_review
 
 jobs:
   test:
@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./
         with:
+          branch: master
           userId: yamatatsu
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
