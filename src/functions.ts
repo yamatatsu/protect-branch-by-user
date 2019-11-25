@@ -29,17 +29,17 @@ export async function main(
 ) {
   console.info("context context context context");
   console.error(JSON.stringify(context, null, 2));
-  if (!userId) throw new Error("'userId' is required.");
-  const { owner, repo } = context.repo;
-  const pullNumber = getPullNumber(context);
+  // if (!userId) throw new Error("'userId' is required.");
+  // const { owner, repo } = context.repo;
+  // const pullNumber = getPullNumber(context);
 
-  if (!token) throw new Error("no GITHUB_TOKEN is found!");
-  if (!pullNumber)
-    throw new Error("You can use this action on only pull_request.");
+  // if (!token) throw new Error("no GITHUB_TOKEN is found!");
+  // if (!pullNumber)
+  //   throw new Error("You can use this action on only pull_request.");
 
-  const result = await getReviews(token, owner, repo, pullNumber);
+  // const result = await getReviews(token, owner, repo, pullNumber);
 
-  const approved = hasUserApproved(userId, result.data);
+  // const approved = hasUserApproved(userId, result.data);
 
-  if (!approved) throw new Error("Owner has not approved yet.");
+  // if (!approved) throw new Error("Owner has not approved yet.");
 }
