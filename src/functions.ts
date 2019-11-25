@@ -27,8 +27,8 @@ export async function main(
     pullNumber: number,
   ) => Promise<Response<Review[]>>,
 ) {
-  console.log("context context context context");
-  console.log(JSON.stringify(context, null, 2));
+  console.info("context context context context");
+  console.error(JSON.stringify(context, null, 2));
   if (!userId) throw new Error("'userId' is required.");
   const { owner, repo } = context.repo;
   const pullNumber = getPullNumber(context);
